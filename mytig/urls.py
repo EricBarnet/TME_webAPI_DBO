@@ -19,3 +19,5 @@ urlpatterns = [
     path('update_multiple_product_promotions/', views.UpdateMultipleProductPromotions.as_view(), name='update_multiple_product_promotions'),
 
 ]
+
+handler404 = 'mytig.views.page_not_found'
