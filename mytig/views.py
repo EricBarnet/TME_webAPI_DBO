@@ -16,6 +16,11 @@ from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 from mytig.models import ProduitEnPromotion, AvailableProduct
 from mytig.serializers import ProduitEnPromotionSerializer, AvailableProductSerializer
+from django.http import HttpResponseNotFound
+from django.shortcuts import render
+
+def page_not_found(request, exception):
+    return render(request, '404.html', status=404)
 
 class InfoProductList(APIView):
     permission_classes = (IsAuthenticated,)
